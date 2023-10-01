@@ -1,0 +1,109 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col">
+      <p class="h3 text-danger fw-bold">
+        Aurionpro Contacts Detail
+        <a routerLink="/contacts/add" class="btn btn-danger">
+          <i class="fa fa-plus-circle"></i> New
+        </a>
+      </p>
+      <h3 >
+      </h3>
+      <form (submit)="onSearch()">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Search User"
+                  [(ngModel)]="searchText"
+                  name="searchText"
+                />
+              </div>
+              <div class="col">
+                <button
+                  type="submit"
+                  class="btn btn-outline-dark"
+                >
+                  Search
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- for loading -->
+
+  <div class="container" *ngIf="loading">
+    <div class="row">
+      <div class="col">
+        <app-spinner></app-spinner>
+      </div>
+    </div>
+  </div>
+
+  <!-- for error -->
+
+  <div class="container" *ngIf="errorMessage">
+    <div class="row">
+      <div class="col">{{ errorMessage }}</div>
+    </div>
+  </div>
+
+  <!-- card of contact -->
+
+  <div class="container mt-5" *ngIf="!loading && isNotEmpty()">
+    <div class="row">
+      <div
+        class="card shadow col-md-3 mb-4 mx-3"
+        style="width: 20rem"
+        *ngFor="let card of filteredContacts"
+      >
+        <div class="col-md-6">
+          <img [src]="card.photo" class="card-img-top" alt="..." />
+        </div>
+        <div class="card-body col-12">
+          <p class="card-text">Name: {{ card.name }}</p>
+          <p class="card-text">Email: {{ card.email }}</p>
+          <p class="card-text">Mobile: {{ card.mobile }}</p>
+          </div>
+          <div class="container mb-2">
+            <div class="d-flex justify-content-between">
+              <a
+                routerLink="/contacts/view/{{ card.id }}"
+                class="btn btn-primary btn-sm md-4"
+              >
+                View
+                <i class="fa fa-eye"></i>
+              </a>
+              <span class="mx-2"></span>
+              <a
+                routerLink="/contacts/edit/{{ card.id }}"
+                class="btn btn-primary btn-sm md-4"
+              >
+                Update
+                <i class="fa fa-eye"></i>
+              </a>
+              <span class="mx-2"></span>
+              <button
+                class="btn btn-danger btn-sm md-4"
+                (click)="DeleteContact(card.id)"
+              >
+                Delete
+                <i class="fa fa-trash"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+

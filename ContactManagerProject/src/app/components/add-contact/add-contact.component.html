@@ -1,0 +1,78 @@
+
+<!-- #myForm="ngForm" (ngSubmit)="onSubmit(myForm.value)" -->
+<div class="container mt-3">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-6">
+        <div class="border p-3">
+          <h2 class="text-center">Contact Details</h2>
+          <form #myForm="ngForm" (submit)="onSubmit()" class="mx-auto" style="max-width: 400px;">
+            <div class="form-group">
+              <label for="id">ID:</label>
+              <input type="text" class="form-control" id="id" name="id" [(ngModel)]="contact.id">
+              <label for="name">Name:</label>
+              <input type="text" class="form-control" id="name" name="name" [(ngModel)]="contact.name">
+              <label for="company">Company:</label>
+              <input type="text" class="form-control" id="company" name="company" [(ngModel)]="contact.company">
+              <label for="email">Email:</label>
+              <input type="email" class="form-control" id="email" name="email" [(ngModel)]="contact.email">
+              <label for="title">Title:</label>
+              <input type="text" class="form-control" id="title" name="title" [(ngModel)]="contact.title">
+              <label for="mobile">Mobile:</label>
+              <input type="tel" class="form-control" id="mobile" name="mobile" [(ngModel)]="contact.mobile">
+              <label for="photo">Photo:</label>
+              <input type="url" class="form-control" id="photo" name="photo" [(ngModel)]="contact.photo">
+
+              <div class="mt-2">Select a Group
+                <select name="" id="" class="form-control" *ngIf="groups.length>0" name="groupId" [(ngModel)]="contact.groupId"> 
+        
+                    <option [value]="group.id" *ngFor="let group of groups">{{group.name}}</option>
+                </select>
+              </div>
+            </div>
+            <br>
+            <input type="submit" class="btn btn-primary" value="Add Details">
+            <span style="margin-right: 10px;"></span>
+            <!-- <button class="btn btn-primary" (click)="resetForm()">Reset-Data</button> -->
+            <span style="margin-right: 10px;"></span>
+            <a routerLink="/" class="btn btn-dark">Close</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+ 
+
+  <!-- <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Company</th>
+        <th>Email</th>
+        <th>Title</th>
+        <th>Mobile</th>
+        <th>Photo</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of property">
+        <td>{{ data.id }}</td>
+        <td>{{ data.name }}</td>
+        <td>{{ data.company }}</td>
+        <td>{{ data.email }}</td>
+        <td>{{ data.title }}</td>
+        <td>{{ data.mobile }}</td>
+        <td>{{ data.photo }}</td>
+        <td>
+          <div class="btn-group">
+            <button (click)="editData(data.id)" class="btn btn-primary">Edit</button>
+            <button (click)="deleteData(data.id)" class="btn btn-danger">Delete</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table> -->
+  <!-- <pre>{{currentProductObj|json}}</pre> -->

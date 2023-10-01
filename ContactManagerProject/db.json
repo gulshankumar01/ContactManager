@@ -1,0 +1,60 @@
+{
+  "contacts": [
+    {
+      "id": "D6BNdWnHI",
+      "name": "Yogendra Maurya",
+      "company": "Spigen",
+      "email": "yogi@gmail.com",
+      "title": "Developer",
+      "mobile": "9876546787",
+      "photo": "https://www.w3schools.com/w3images/avatar2.png",
+      "groupId": "3"
+    },
+    {
+      "id": "TVobxeKbI",
+      "name": "Anup ",
+      "groupId": "1",
+      "photo": "https://avatars.githubusercontent.com/u/109951?v=4",
+      "title": "System Engineer",
+      "email": "avanage@gmail.com",
+      "mobile": 8880008882,
+      "company": "Infosys"
+    },
+    {
+      "id": "23",
+      "name": "Raushan kumar",
+      "company": "aurionpro",
+      "email": "raushan@gmail.com",
+      "title": "software",
+      "mobile": "7050489112",
+      "photo": "https://avatars.githubusercontent.com/u/109951?v=4",
+      "groupId": "4"
+    }
+  ],
+  "groups": [
+    {
+      "id": "1",
+      "name": "Colleague"
+    },
+    {
+      "id": "2",
+      "name": "Friend"
+    },
+    {
+      "id": "3",
+      "name": "Family"
+    },
+    {
+      "id": "4",
+      "name": "Service"
+    },
+    {
+      "id": "5",
+      "name": "Community"
+    },
+    {
+      "id": "6",
+      "name": "Social"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+<form [formGroup]="contactForm" (submit)="onSubmit()">
+    <div class="container col-6 ">   
+        <h2 class="col-6 mt-2 justify-content-center text-center">Contact Details</h2>
+      <div class="row">
+        <!-- Image -->
+        <div class="col-4 mt-4">
+          <img [src]="contact.photo" alt="Profile Photo" class="contact-img">
+        </div>
+        <!-- Form Controls -->
+        <div class="col-8">
+          <div class="card mt-4">
+            <div class="card-body">
+              <div class="form-group">
+                <label for="id">ID:</label>
+                <input type="text" class="form-control" id="id" formControlName="id">
+              </div>
+              <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" formControlName="name">
+              </div>
+              <div class="form-group">
+                <label for="name">Email:</label>
+                <input type="text" class="form-control" id="name" formControlName="email">
+              </div>
+              <div class="form-group">
+                <label for="name">Title:</label>
+                <input type="text" class="form-control" id="name" formControlName="title">
+              </div>
+              <div class="form-group">
+                <label for="name">Mobile:</label>
+                <input type="text" class="form-control" id="name" formControlName="mobile">
+              </div>
+              <div class="form-group">
+                <label for="name">Company:</label>
+                <input type="text" class="form-control" id="name" formControlName="company">
+              </div>
+              <div class="form-group">
+                <label for="name">Photo</label>
+                <input type="text" class="form-control" id="name" formControlName="photo">
+              </div>
+              <div class="form-group">
+                <label>Select a Group</label>
+                <select class="form-control" formControlName="groupId">
+                  <option [value]="group.id" *ngFor="let group of groups">{{ group.name }}</option>
+                </select>
+              </div>
+              <div class="form-group mt-3">
+                <input type="submit" class="btn btn-primary" value="Update Details">
+                <span style="margin-right: 10px;"></span>
+                <a routerLink="/" class="btn btn-dark">Close</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  

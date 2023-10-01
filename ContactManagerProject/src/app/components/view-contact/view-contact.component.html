@@ -1,0 +1,33 @@
+<h1 class="text-center">View Contact</h1>
+<div class="container mt-5 text-center">
+  <div class="card shadow" style="width: 15rem">
+    <div class="row">
+      <div class="card-body">
+        <div class="d-flex justify-content-center">
+          <img
+            [src]="contact.photo"
+            class="card-img-top"
+            alt="..."
+            style="max-width: 100%"
+          />
+        </div>
+        <p class="card-text">Name:{{ contact.name }}</p>
+        <p class="card-text">Email:{{ contact.email }} </p>
+        <p class="card-text">Mobile:{{contact.mobile}}</p>
+        <p class="card-text">Company Name:{{ contact.company }}</p>
+        <p class="card-text">Title: {{ contact.title }}</p>
+        <p class="card-text">Group:{{ group.name }}</p>
+      </div>
+      <div class="row">
+        <div class="col">
+          <a class="btn btn-danger" routerLink="/">
+            <i class="fa fa-arrow-alt-circle-left"></i> Back</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
